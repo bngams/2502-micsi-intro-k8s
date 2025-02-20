@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: whoami # /!\ meme namespace 
+  name: whoami
+spec:
+  selector:
+    name: whoami
+  type: NodePort # if Ingress above can be ClusterIP 
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 31000
